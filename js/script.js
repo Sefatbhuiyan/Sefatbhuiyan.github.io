@@ -3652,11 +3652,17 @@
       .stat,
       .service,
       .project,
+      .featured-project-card,
+      .all-projects-card,
       .timeline-item,
       .edu-card,
       .skill-card,
       .testimonial,
       .contact,
+      .contact-grid,
+      .contact-card,
+      footer,
+      footer .footer-grid,
       footer .footer-top
       `
     );
@@ -4220,11 +4226,19 @@
         projectShowcase
       );
 
+      $(".featured-project-card").forEach((card) => {
+        projectObserver.observe(card);
+      });
+
     } else {
 
       projectShowcase.classList.add(
         "is-visible"
       );
+
+      $(".featured-project-card").forEach((card) => {
+        card.classList.add("is-visible");
+      });
 
     }
 
