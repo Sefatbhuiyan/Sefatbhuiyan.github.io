@@ -7231,3 +7231,138 @@ html[dir="rtl"] .skip-link {
 #testimonials .testimonial {
   min-height: 100%;
 }
+
+
+/* =========================================================
+   FINAL FIXES — CONTACT LAYOUT, FOOTER CLEARANCE & REVEALS
+   ========================================================= */
+
+/* Contact area uses compact, readable pill links rather than circular icon buttons. */
+#contact .contact-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+  margin-top: 24px;
+}
+
+#contact .contact-card {
+  position: relative;
+  max-width: 760px;
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid var(--line, rgba(255,255,255,.09));
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
+  box-shadow: 0 18px 55px rgba(0,0,0,.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+#contact .contact-card h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+#contact .contact-card .section-desc {
+  margin: 0;
+}
+
+#contact .socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+#contact .socials a {
+  width: auto;
+  min-width: 108px;
+  min-height: 42px;
+  height: auto;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1.2;
+  font-size: 13px;
+  text-align: center;
+  transform: none;
+}
+
+#contact .socials a:hover {
+  transform: translateY(-3px);
+}
+
+footer.container {
+  padding-top: 48px;
+  padding-bottom: 110px;
+}
+
+footer .footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 28px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: 24px;
+}
+
+footer .footer-grid > div:first-child {
+  min-width: 0;
+}
+
+footer .footer-grid p {
+  margin: 14px 0 0;
+  color: var(--muted, #9ca4bf);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+footer .copyright {
+  max-width: 100%;
+  line-height: 1.7;
+  text-align: right;
+}
+
+.featured-project-card {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  #contact .contact-card {
+    padding: 20px;
+  }
+
+  #contact .socials {
+    align-items: stretch;
+  }
+
+  #contact .socials a {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  footer.container {
+    padding-bottom: 100px;
+  }
+
+  footer .footer-grid {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  footer .copyright {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready,
+  .featured-project-card,
+  .all-projects-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
